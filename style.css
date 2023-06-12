@@ -1,7 +1,6 @@
-
-img {
-    height: 600px;
-    width: 50%;
+.valor,
+.titulo {
+    text-align: center;
 }
 
 .contenedor-PolFija,
@@ -20,13 +19,20 @@ img {
 
 .contenedorValores {
     display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.contenedor-datos{
+    display: flex;
     flex-direction: column;
 }
 
-.valor {
-    text-align: center;
+.form-group {
+    margin: 10px;
 }
 
-.titulo{
-    text-align: center;
+img {
+    height: 600px;
+    width: 50%;
 }
