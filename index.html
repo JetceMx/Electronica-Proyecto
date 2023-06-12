@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="Calculos.js"></script>
+    <script src="Calculos.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Proyecto Electronica</title>
@@ -21,7 +21,8 @@
             <div class="contenedorValores">
                 <div class="form-group">
                     <label for="sel1">Calculo a realizar:</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select id="Opc1" class="form-select" aria-label="Default select example">
+                        <option selected>Seleccione</option>
                         <option value="1">Corriente y voltajes</option>
                         <option value="2">Resistencias</option>
                     </select>
@@ -38,7 +39,8 @@
     
                 <div class="form-group">
                     <label for="sel1">Transistor:</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select id="Opc2" class="form-select" aria-label="Default select example">
+                        <option selected>Seleccione</option>
                         <option value="1">MPS2222</option>
                         <option value="2">T1P41</option>
                         <option value="3">BC547</option>
