@@ -80,6 +80,8 @@
                     <input type="text" class="form-control" id="PF-RB">
                     <label for="">IC</label>
                     <input type="text" class="form-control" id="PF-IC">
+                    <label for="">RE</label>
+                    <input type="text" class="form-control" id="PF-RE">
                 </div>
     
                 <div class="form-group">
@@ -98,6 +100,9 @@
                     <input type="text" class="form-control" id="PF-VB">
                     <label for="">VCE</label>
                     <input type="text" class="form-control" id="PF-VCE">
+                    <label for="">VE</label>
+                    <input type="text" class="form-control" id="PF-VE">
+                    
                 </div>
             </div>
             <button type="button" class="btn btn-primary">Calcular</button>
@@ -106,10 +111,98 @@
     <h2 class="titulo">Polarizacion por Medio del Divisor de Voltaje</h2>
     <div class="contenedor-PolDiviVoltaje">
         <img src="Imagenes/Polarizacion Divisor de Voltaje.png" alt="">
+        <div class="contenedor-datos">
+            <h3 class="titulo">Datos</h3>
+            <div class="contenedorValores">
+                <div class="form-group">
+                    <label for="sel1">Calculo a realizar:</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="1">Corriente y voltajes</option>
+                        <option value="2">Resistencias</option>
+                    </select>
+                    <br>
+                    <label for="">VCC</label>
+                    <input type="text" class="form-control" id="PF-VCC">
+                    <label for="">RC</label>
+                    <input type="text" class="form-control" id="PF-RC">
+                    <label for="">R1</label>
+                    <input type="text" class="form-control" id="PF-R1">
+                    <label for="">R2</label>
+                    <input type="text" class="form-control" id="PF-R2">
+                    <label for="">IC</label>
+                    <input type="text" class="form-control" id="PF-IC">
+                    <label for="">RE</label>
+                    <input type="text" class="form-control" id="PF-RE">
+                </div>
+    
+                <div class="form-group">
+                    <label for="sel1">Transistor:</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="1">MPS2222</option>
+                        <option value="2">T1P41</option>
+                        <option value="3">BC547</option>
+                    </select>
+                    <br>
+                    <label for="">IB</label>
+                    <input type="text" class="form-control" id="PF-IB">
+                    <label for="">VC</label>
+                    <input type="text" class="form-control" id="PF-VC">
+                    <label for="">VB</label>
+                    <input type="text" class="form-control" id="PF-VB">
+                    <label for="">VCE</label>
+                    <input type="text" class="form-control" id="PF-VCE">
+                    <label for="">VE</label>
+                    <input type="text" class="form-control" id="PF-VE">
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary">Calcular</button>
+        </div>
     </div>
     <h2 class="titulo">Realimentacion del colector</h2>
     <div class="contenedor-RealiColector">
         <img src="Imagenes/Realimentacion del colector.png" alt="">
+        <div class="contenedor-datos">
+            <h3 class="titulo">Datos</h3>
+            <div class="contenedorValores">
+                <div class="form-group">
+                    <label for="sel1">Calculo a realizar:</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="1">Corriente y voltajes</option>
+                        <option value="2">Resistencias</option>
+                    </select>
+                    <br>
+                    <label for="">VCC</label>
+                    <input type="text" class="form-control" id="PF-VCC">
+                    <label for="">RC</label>
+                    <input type="text" class="form-control" id="PF-RC">
+                    <label for="">RB</label>
+                    <input type="text" class="form-control" id="PF-RB">
+                    <label for="">IC</label>
+                    <input type="text" class="form-control" id="PF-IC">
+                </div>
+    
+                <div class="form-group">
+                    <label for="sel1">Transistor:</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="1">MPS2222</option>
+                        <option value="2">T1P41</option>
+                        <option value="3">BC547</option>
+                    </select>
+                    <br>
+                    <label for="">IB</label>
+                    <input type="text" class="form-control" id="PF-IB">
+                    <label for="">VC</label>
+                    <input type="text" class="form-control" id="PF-VC">
+                    <label for="">VB</label>
+                    <input type="text" class="form-control" id="PF-VB">
+                    <label for="">VCE</label>
+                    <input type="text" class="form-control" id="PF-VCE">
+                    <label for="">RE</label>
+                    <input type="text" class="form-control" id="PF-RE">
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary">Calcular</button>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
