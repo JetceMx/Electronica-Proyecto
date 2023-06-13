@@ -106,3 +106,30 @@ function RealimentacionColector(){
 
 
 
+function PolarizacionDiv(){
+    var  Vbe = 0.7;
+    var Re = Number(document.getElementById('PDV-RE').value);
+    var Vcc = Number(document.getElementById('PDV-VCC').value);
+    var Rc = Number(document.getElementById('PDV-RC').value);
+    var R1 = Number(document.getElementById('PDV-R1').value);
+    var R2 = Number(document.getElementById('PDV-R2').value);
+
+    var Vth = (Vcc * R2)/(R1 + R2);
+    var Rth = (R1 * R2)/(R1 + R2);
+
+    var Ie = Ib + Ic;
+    var Vrc = Ic * Rc;
+    var Vre = Ie * Re;
+
+    //Obtener Ib
+    var Ib = (Vth - Vbe)/(Rth + (80+1)*Re);
+    document.getElementById('PDV-IB').value = Ib;
+    
+    //obteber Ic
+    var Ic = 80 * Ib;
+    document.getElementById('PDV-IC').value = Ic;
+
+    //Obtener Vce
+    var Vce = Vcc - Vrc - Vre;
+    document.getElementById('PDV').value = Vce;
+}
