@@ -117,7 +117,7 @@ function RealimentacionColector(){
 
 
 function PolarizacionDiv(){
-    var  Vbe = 0.7;
+    var Vbe = 0.7;
     var Re = Number(document.getElementById('PDV-RE').value);
     var Vcc = Number(document.getElementById('PDV-VCC').value);
     var Rc = Number(document.getElementById('PDV-RC').value);
@@ -126,10 +126,8 @@ function PolarizacionDiv(){
 
     var Vth = (Vcc * R2)/(R1 + R2);
     var Rth = (R1 * R2)/(R1 + R2);
-
-    var Ie = Ib + Ic;
-    var Vrc = Ic * Rc;
-    var Vre = Ie * Re;
+    
+    
 
     //Obtener Ib
     var Ib = (Vth - Vbe)/(Rth + (80+1)*Re);
@@ -139,7 +137,23 @@ function PolarizacionDiv(){
     var Ic = 80 * Ib;
     document.getElementById('PDV-IC').value = Ic;
 
+    var Ie = Ib + Ic;
+    var Vre = Ie * Re;
+    var Vrc = Ic * Rc;
+
     //Obtener Vce
-    var Vce = Vcc - Vrc - Vre;
-    document.getElementById('PDV').value = Vce;
+    var Vce = Vcc-Vrc-Vre;
+    document.getElementById('PDV-VCE').value = Vce;
+
+    //Obtener Ve
+    document.getElementById('PDV-VE').value = Vre;
+
+    //Obtener Vc
+    var Vc = Vce + Vre;
+    document.getElementById('PDV-VC').value = Vc;
+
+    //Obtener Vb
+    var Vb = Vbe + Vre;
+    document.getElementById('PDV-VB').value = Vb;
+    
 }
