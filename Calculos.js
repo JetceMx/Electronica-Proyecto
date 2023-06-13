@@ -83,23 +83,33 @@ function PolarizacionFija() {
 
 function RealimentacionColector(){
 
+    var B = 80;
+
     var Vbe = 0.7;
-    var Vcc = Number(document.getElementById('PF-VCC').value);
-    var Rb = Number(document.getElementById('PF-RB').value);
-    var Rc = Number(document.getElementById('PF-RC').value);
-    var Re = Number(document.getElementById('PF-RE').value);
+    var Vcc = Number(document.getElementById('PRC-VCC').value);
+    var Rb = Number(document.getElementById('PRC-RB').value);
+    var Rc = Number(document.getElementById('PRC-RC').value);
+    var Re = Number(document.getElementById('PRC-RE').value);
+    
+     // Obtener IB
+     var Ib = (Vcc - Vbe) / (Rb + B * (Rc + Re));
+     document.getElementById('PRC-IB').value = Ib
 
      // Obtener IC
      var Ic = Ib * B;
-     document.getElementById('PF-IC').value = Ic
-
-     // Obtener IB
-    var Ib = (Vcc - Vbe) / (Rb + B(Rc + Re));
-    document.getElementById('PF-IB').value = Ib
+     document.getElementById('PRC-IC').value = Ic
 
     // Obtener VCE
-    var Vce = Vcc - Ic(Rc+Re);
-    document.getElementById('PF-VCE').value = Vce
+    var Vce = Vcc - Ic*(Rc+Re);
+    document.getElementById('PRC-VCE').value = Vce
+
+    // Obtener Vrc
+    var Vrc = Ic * Rc;
+
+    // Obtener Vc
+    var Vc = Vcc - Vrc
+    document.getElementById('PRC-VC').value = Vc
+
 
 
 }
