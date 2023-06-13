@@ -1,6 +1,33 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .valor,
-.titulo {
+.titulo, 
+.subtitulo,
+.tituloMay {
+    padding: 5px;
     text-align: center;
+}
+
+.titulo{
+    background-color: #025259;
+    color: white;
+    width: 80%;
+    text-align: center;
+}
+
+.tituloMay{
+    width: 100%;
+    background-color: #0f1920;
+    color: white;
+}
+
+.subtitulo{
+    background-color: #CC8D1A;
 }
 
 .contenedor-PolFija,
@@ -9,8 +36,8 @@
 .contenedor-RealiColector{
     margin: 0 auto;
     width: 80%;
-    height: auto;
-    border: 2px solid red;
+    height: 700px;
+    background-color: #16232E;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -35,4 +62,15 @@
 img {
     height: 600px;
     width: 50%;
+    margin: 10px;
+    padding: 15px;
+}
+
+label{
+    border-radius: 3px;
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #164C45;
 }

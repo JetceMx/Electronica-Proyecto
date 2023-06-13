@@ -12,12 +12,13 @@
 </head>
 
 <body>
-    <h2 class="titulo">Calculadora de Transistores BJT</h2>
+    <h2 class="tituloMay">Calculadora de Transistores BJT</h2>
+    <br>
     <h2 class="titulo">Polarizacion Fija</h2>
     <div class="contenedor-PolFija">
         <img src="Imagenes/Polarizacion Fija.JPG" alt="">
         <div class="contenedor-datos">
-            <h3 class="titulo">Datos</h3>
+            <h3 class="subtitulo">Datos</h3>
             <div class="contenedorValores">
                 <div class="form-group">
                     <label for="sel1">Calculo a realizar:</label>
@@ -56,18 +57,21 @@
                     <input type="text" class="form-control" id="PF-VCE">
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" onclick="PolarizacionFija()">Calcular</button>
+            <button style="background: #BDA523; color: black; font-size: 20px;" type="button" class="btn" onclick="PolarizacionFija()">Calcular</button>
         </div>
     </div> 
+
+    <br>
+
     <h2 class="titulo">Polarizacion de Emisor</h2>
     <div class="contenedor-PolEmisor">
         <img src="Imagenes/Polarizacion emisor.png" alt="">
         <div class="contenedor-datos">
-            <h3 class="titulo">Datos</h3>
+            <h3 class="subtitulo">Datos</h3>
             <div class="contenedorValores">
                 <div class="form-group">
                     <label for="sel1">Calculo a realizar:</label>
-                    <select id="Opc1" class="form-select" aria-label="Default select example">
+                    <select id="Opc3" class="form-select" aria-label="Default select example">
                         <option selected>Seleccione</option>
                         <option value="1">Corriente y voltajes</option>
                         <option value="2">Resistencias</option>
@@ -79,13 +83,15 @@
                     <input type="text" class="form-control" id="PE-RC">
                     <label for="">RB</label>
                     <input type="text" class="form-control" id="PE-RB">
+                    <label for="">RE</label>
+                    <input type="text" class="form-control" id="PE-RE">
                     <label for="">IC</label>
                     <input type="text" class="form-control" id="PE-IC">
                 </div>
     
                 <div class="form-group">
                     <label for="sel1">Transistor:</label>
-                    <select id="Opc2" class="form-select" aria-label="Default select example">
+                    <select id="Opc4" class="form-select" aria-label="Default select example">
                         <option selected>Seleccione</option>
                         <option value="1">MPS2222</option>
                         <option value="2">T1P41</option>
@@ -94,22 +100,29 @@
                     <br>
                     <label for="">IB</label>
                     <input type="text" class="form-control" id="PE-IB">
+                    <label for="">IE</label>
+                    <input type="text" class="form-control" id="PE-IE">
                     <label for="">VC</label>
                     <input type="text" class="form-control" id="PE-VC">
                     <label for="">VB</label>
                     <input type="text" class="form-control" id="PE-VB">
+                    <label for="">VE</label>
+                    <input type="text" class="form-control" id="PE-VE">
                     <label for="">VCE</label>
                     <input type="text" class="form-control" id="PE-VCE">
                 </div>
             </div>
-            <button type="button" class="btn btn-primary">Calcular</button>
+            <button style="background: #BDA523; color: black; font-size: 20px;" type="button" class="btn" onclick="PolarizacionEmisor()">Calcular</button>
         </div>
     </div>
+
+    <br>
+
     <h2 class="titulo">Divisor de voltaje</h2>
     <div class="contenedor-PolDiviVoltaje">
         <img src="Imagenes/Polarizacion Divisor de Voltaje.png" alt="">
         <div class="contenedor-datos">
-            <h3 class="titulo">Datos</h3>
+            <h3 class="subtitulo">Datos</h3>
             <div class="contenedorValores">
                 <div class="form-group">
                     <label for="sel1">Calculo a realizar:</label>
@@ -154,14 +167,17 @@
                     <input type="text" class="form-control" id="PDV-VE">
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" onclick="PolarizacionDiv()">Calcular</button>
+            <button type="button" style="background: #BDA523; color: black; font-size: 20px;"class="btn" onclick="PolarizacionDiv()">Calcular</button>
         </div>
     </div>
+
+    <br>
+
     <h2 class="titulo">Realimentacion del colector</h2>
     <div class="contenedor-RealiColector">
         <img src="Imagenes/Realimentacion del colector.png" alt="">
         <div class="contenedor-datos">
-            <h3 class="titulo">Datos</h3>
+            <h3 class="subtitulo">Datos</h3>
             <div class="contenedorValores">
                 <div class="form-group">
                     <label for="sel1">Calculo a realizar:</label>
@@ -202,7 +218,7 @@
                     <input type="text" class="form-control" id="PRC-RE">
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" onclick="RealimentacionColector()">Calcular</button>
+            <button type="button" style="background: #BDA523; color: black; font-size: 20px;" class="btn" onclick="RealimentacionColector()">Calcular</button>
         </div>
     </div>
 
