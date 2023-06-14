@@ -144,9 +144,11 @@ function opcionCambiada5() {
   var R2 = document.getElementById("PDV-R2");
   var RC = document.getElementById("PDV-RC");
   var RE = document.getElementById("PDV-RE");
+  var IE = document.getElementById("PDV-IE");
 
   if (calculo == 1) {
     IB.disabled = true;
+    IE.disabled = true;
     IC.disabled = true;
     VC.disabled = true;
     VE.disabled = true;
@@ -159,6 +161,7 @@ function opcionCambiada5() {
     R2.disabled = false;
   } else {
     IB.disabled = false;
+    IE.disabled = false;
     IC.disabled = false;
     VC.disabled = false;
     VE.disabled = false;
