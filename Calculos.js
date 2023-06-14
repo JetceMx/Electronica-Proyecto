@@ -22,6 +22,13 @@ var $select6 = document.getElementById("Opc6");
 console.log($select6);
 $select6.addEventListener("change", opcionCambiada6);
 
+var $select7 = document.getElementById('Opc7');
+console.log($select7)
+$select7.addEventListener("change", opcionCambiada7);
+
+var $select8 = document.getElementById('Opc8');
+console.log($select8)
+$select2.addEventListener("change", opcionCambiada8);
 var B = 0;
 
 function opcionCambiada() {
@@ -35,26 +42,26 @@ function opcionCambiada() {
   var RC = document.getElementById("PF-RB");
   var RB = document.getElementById("PF-RC");
 
-  if (calculo == 1) {
-    IB.disabled = true;
-    IC.disabled = true;
-    VC.disabled = true;
-    VB.disabled = true;
-    VCE.disabled = true;
-    VCC.disabled = false;
-    RC.disabled = false;
-    RB.disabled = false;
-  } else {
-    VCC.disabled = true;
-    RC.disabled = true;
-    RB.disabled = true;
-    IB.disabled = false;
-    IC.disabled = false;
-    VC.disabled = false;
-    VB.disabled = false;
-    VCE.disabled = false;
-  }
-}
+    if (calculo == 1) {
+        IB.disabled = true;
+        IC.disabled = true;
+        VC.disabled = true;
+        VB.disabled = true;
+        VCE.disabled = true;
+        VCC.disabled = false;
+        RC.disabled = false;
+        RB.disabled = false;
+    } else {
+        VCC.disabled = true;
+        RC.disabled = true;
+        RB.disabled = true;
+        IB.disabled = false;
+        IC.disabled = false;
+        VC.disabled = false;
+        VB.disabled = false;
+        VCE.disabled = false;
+    }
+};
 
 function opcionCambiada2() {
   var transistor = $select2.selectedIndex;
@@ -190,11 +197,76 @@ function opcionCambiada6() {
 }
 //Fin del apartado de Polarizacion por divisor de voltaje
 
+// Apartado Realimentacion del Colector
+
+
+function opcionCambiada7() {
+    var calculo = $select7.selectedIndex;
+    var IB = document.getElementById('PRC-IB');
+    var IC = document.getElementById('PRC-IC');
+    var IE = document.getElementById('PRC-IE');
+    var VC = document.getElementById('PRC-VC');
+    var VB = document.getElementById('PRC-VB');
+    var VE = document.getElementById('PRC-VE');
+    var VCE = document.getElementById('PRC-VCE');
+    var VCC = document.getElementById('PRC-VCC');
+    var RC = document.getElementById('PRC-RB');
+    var RB = document.getElementById('PRC-RC');
+    var RE = document.getElementById('PRC-RE');
+
+    if (calculo == 1) {
+        IB.disabled = true;
+        IC.disabled = true;
+        IE.disabled = true;
+        VC.disabled = true;
+        VB.disabled = true;
+        VE.disabled = true;
+        VCE.disabled = true;
+        VCC.disabled = false;
+        RC.disabled = false;
+        RB.disabled = false;
+        RE.disabled = false;
+    } else {
+        VCC.disabled = false;
+        RC.disabled = true;
+        RB.disabled = true;
+        RE.disabled = true;
+        IB.disabled = false;
+        IC.disabled = false;
+        IE.disabled = false;
+        VC.disabled = false;
+        VB.disabled = false;
+        VE.disabled = false;
+        VCE.disabled = false;
+    }
+};
+
+
+function opcionCambiada8() {
+    var transistor = $select8.selectedIndex;
+    if (transistor == 1) {
+        B = 80;
+        console.log(B);
+    } else if (transistor == 2) {
+        B = 90;
+        console.log(B);
+    } else {
+        B = 100;
+        console.log(B);
+    }
+}
+
+
+// Fin Apartado Realimentacion del Colector
+
+
 function PolarizacionFija() {
-  var Vbe = 0.7;
-  var Vcc = Number(document.getElementById("PF-VCC").value);
-  var Rb = Number(document.getElementById("PF-RB").value);
-  var Rc = Number(document.getElementById("PF-RC").value);
+    var calculo = $select1.selectedIndex;
+    if (calculo == 1) {
+    var Vbe = 0.7;
+    var Vcc = Number(document.getElementById('PF-VCC').value);
+    var Rb = Number(document.getElementById('PF-RB').value);
+    var Rc = Number(document.getElementById('PF-RC').value);
 
   // Obtener IB
   var Ib = (Vcc - Vbe) / Rb;
@@ -215,8 +287,28 @@ function PolarizacionFija() {
   var Vc = Vcc - Vrc;
   document.getElementById("PF-VC").value = Vc;
 
-  // Obtener VB
-  document.getElementById("PF-VB").value = Vbe;
+    // Obtener VB
+    document.getElementById('PF-VB').value = Vbe;
+    } else {
+
+    var Vbe = 0.7;
+    var Vcc = Number(document.getElementById('PF-VCC').value);
+    var Ib = Number(document.getElementById('PF-IB  ').value);
+    var Vc = Number(document.getElementById('PF-VC').value);
+    var Vb = Number(document.getElementById('PF-VB').value);
+    var Vce = Number(document.getElementById('PF-VCE').value);
+    var Ic = Number(document.getElementById('PF-Ic').value);
+
+    // Obtener RB
+    var Rb = (Vcc - Vbe)/Ib
+    document.getElementById('PF-RB').value = Rb;
+
+    // Obtener RC
+    var Rc = (Vcc - Vc)/Ic
+    document.getElementById('PF-RB').value = Rb;
+
+
+    }
 }
 
 function PolarizacionEmisor() {
@@ -289,13 +381,13 @@ function PolarizacionEmisor() {
 }
 
 function RealimentacionColector() {
-  var B = 80;
-
-  var Vbe = 0.7;
-  var Vcc = Number(document.getElementById("PRC-VCC").value);
-  var Rb = Number(document.getElementById("PRC-RB").value);
-  var Rc = Number(document.getElementById("PRC-RC").value);
-  var Re = Number(document.getElementById("PRC-RE").value);
+    var calculo = $select7.selectedIndex;
+    if (calculo == 1) {
+    var Vbe = 0.7;
+    var Vcc = Number(document.getElementById('PRC-VCC').value);
+    var Rb = Number(document.getElementById('PRC-RB').value);
+    var Rc = Number(document.getElementById('PRC-RC').value);
+    var Re = Number(document.getElementById('PRC-RE').value);
 
   // Obtener IB
   var Ib = (Vcc - Vbe) / (Rb + B * (Rc + Re));
@@ -309,12 +401,60 @@ function RealimentacionColector() {
   var Vce = Vcc - Ic * (Rc + Re);
   document.getElementById("PRC-VCE").value = Vce;
 
-  // Obtener Vrc
-  var Vrc = Ic * Rc;
+    // Obtener IE
+    var Ie = Ib + Ic;
+    document.getElementById('PRC-IE').value = Ie
 
-  // Obtener Vc
-  var Vc = Vcc - Vrc;
-  document.getElementById("PRC-VC").value = Vc;
+    // Obtener VCE
+    var Vce = Vcc - Ic * (Rc + Re);
+    document.getElementById('PRC-VCE').value = Vce
+
+    // Obtener Vrc
+    var Vrc = Ic * Rc;
+
+    // Obtener Vc
+    var Vc = Vcc - Vrc
+    document.getElementById('PRC-VC').value = Vc
+
+    // Obtener Vb
+    var Vb = Vc - (Ib * Rb);
+    document.getElementById('PRC-VB').value = Vb
+    
+    // Obtener Ve
+    var Ve = Ie * Re;
+    document.getElementById('PRC-VE').value = Ve
+
+    
+    }else{
+
+    var Vbe = 0.7;
+    var Vcc = Number(document.getElementById('PRC-VCC').value);
+    var Ib = Number(document.getElementById('PRC-IB').value);
+    var Vc = Number(document.getElementById('PRC-VC').value);
+    var Vb = Number(document.getElementById('PRC-VB').value);
+    var Ve = Number(document.getElementById('PRC-VE').value);
+    var Vce = Number(document.getElementById('PRC-VCE').value);
+    var Ic = Number(document.getElementById('PRC-IC').value);
+    var Ie = Number(document.getElementById('PRC-IE').value);
+
+    // Obtener Re
+    var Re = Ve / Ie;
+    document.getElementById('PRC-RE').value = Re
+
+    // Obtener Rc
+    var Vrc = Vcc - Vc; 
+
+    var Rc = Vrc / Ic;
+    document.getElementById('PRC-RC').value = Rc
+
+    // Obtener Rb
+    var Rb = (Vcc - Vbe - Ib*(B*(Rc + Re)))/Ib
+    document.getElementById('PRC-RB').value = Rb
+
+
+
+    }
+
 }
 
 function PolarizacionDiv() {
