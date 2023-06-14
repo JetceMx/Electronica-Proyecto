@@ -28,7 +28,8 @@ $select7.addEventListener("change", opcionCambiada7);
 
 var $select8 = document.getElementById('Opc8');
 console.log($select8)
-$select2.addEventListener("change", opcionCambiada8);
+$select8.addEventListener("change", opcionCambiada8);
+
 var B = 0;
 
 function opcionCambiada() {
