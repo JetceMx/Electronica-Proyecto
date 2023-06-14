@@ -53,7 +53,7 @@ function opcionCambiada() {
         RC.disabled = false;
         RB.disabled = false;
     } else {
-        VCC.disabled = true;
+        VCC.disabled = false;
         RC.disabled = true;
         RB.disabled = true;
         IB.disabled = false;
